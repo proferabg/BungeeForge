@@ -1,14 +1,18 @@
 {
   "required": true,
+  "minVersion": "0.8",
   "package": "ua.caunt.bungeeforge.mixin",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_21",
   "refmap": "bungeeforge.refmap.json",
   "mixins": [
-    "network.Connection",
-    "network.protocol.handshake.ClientIntentionPacket",
-    "server.network.ServerHandshakePacketListenerImpl",
-    "server.network.ServerLoginPacketListenerImpl"
+    "network.ConnectionMixin",
+    "network.protocol.handshake.ClientIntentionPacketMixin",
+    "server.network.ServerHandshakePacketListenerImplMixin",
+    "server.network.ServerLoginPacketListenerImplMixin"
   ],
-  "client": [],
-  "minVersion": "0.7"
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }

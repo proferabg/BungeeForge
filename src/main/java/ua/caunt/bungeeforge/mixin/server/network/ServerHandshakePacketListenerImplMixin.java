@@ -12,7 +12,7 @@ import ua.caunt.bungeeforge.bridge.network.ConnectionBridge;
 import ua.caunt.bungeeforge.bridge.network.protocol.handshake.ClientIntentionPacketBridge;
 
 @Mixin(net.minecraft.server.network.ServerHandshakePacketListenerImpl.class)
-public class ServerHandshakePacketListenerImpl {
+public class ServerHandshakePacketListenerImplMixin {
     @Final
     @Shadow
     private Connection connection;

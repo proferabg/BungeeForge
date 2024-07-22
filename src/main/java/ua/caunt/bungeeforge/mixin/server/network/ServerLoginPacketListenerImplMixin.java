@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.regex.Pattern;
 
 @Mixin(net.minecraft.server.network.ServerLoginPacketListenerImpl.class)
-public class ServerLoginPacketListenerImpl implements ServerLoginPacketListenerImplBridge {
+public class ServerLoginPacketListenerImplMixin implements ServerLoginPacketListenerImplBridge {
     @Final
     @Shadow
     Connection connection;

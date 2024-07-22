@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Mixin(net.minecraft.network.protocol.handshake.ClientIntentionPacket.class)
-public class ClientIntentionPacket implements ClientIntentionPacketBridge {
+public class ClientIntentionPacketMixin implements ClientIntentionPacketBridge {
     @Unique
     private static String bungee$spoofedAddress;
     @Unique
@@ -42,7 +42,7 @@ public class ClientIntentionPacket implements ClientIntentionPacketBridge {
                 .toArray(Property[]::new);
 
         return Arrays.stream(properties)
-                .filter(ClientIntentionPacket::isFmlMarker)
+                .filter(ClientIntentionPacketMixin::isFmlMarker)
                 .findFirst()
                 .map(property -> chunks[1] + "\0" + property.value().split("\u0001")[1] + "\0")
                 .orElseGet(() -> chunks[1]);
