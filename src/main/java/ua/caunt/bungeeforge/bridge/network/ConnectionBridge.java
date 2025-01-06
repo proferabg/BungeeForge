@@ -6,11 +6,11 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface ConnectionBridge {
-    void bungee$setSpoofedAddress(String spoofedAddress);
-    void bungee$setSpoofedId(UUID spoofedId);
-    void bungee$setSpoofedProperties(Property[] spoofedProperties);
-    Optional<String> bungee$getSpoofedAddress();
-    Optional<UUID> bungee$getSpoofedId();
-    Optional<Property[]> bungee$getSpoofedProperties();
-    boolean bungee$hasSpoofedProfile();
+    void setSpoofedAddress(String spoofedAddress);
+    void setSpoofedId(UUID spoofedId);
+    void setSpoofedProperties(Property[] spoofedProperties);
+    Optional<String> getSpoofedAddress();
+    Optional<UUID> getSpoofedId();
+    Optional<Property[]> getSpoofedProperties();
+    boolean hasSpoofedProfile();
 }
