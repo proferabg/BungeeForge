@@ -23,8 +23,10 @@ public abstract class ServerHandshakePacketListenerImplMixin {
         ClientIntentionPacketBridge clientIntentionPacketBridge = (ClientIntentionPacketBridge) (Object) p_9975_;
         ConnectionBridge connectionBridge = (ConnectionBridge) connection;
 
-        connectionBridge.setSpoofedAddress(clientIntentionPacketBridge.getSpoofedAddress());
-        connectionBridge.setSpoofedId(clientIntentionPacketBridge.getSpoofedId());
-        connectionBridge.setSpoofedProperties(clientIntentionPacketBridge.getSpoofedProperties());
+        try {
+            connectionBridge.setSpoofedAddress(clientIntentionPacketBridge.getSpoofedAddress());
+            connectionBridge.setSpoofedId(clientIntentionPacketBridge.getSpoofedId());
+            connectionBridge.setSpoofedProperties(clientIntentionPacketBridge.getSpoofedProperties());
+        } catch (Exception ignored) { }
     }
 }
