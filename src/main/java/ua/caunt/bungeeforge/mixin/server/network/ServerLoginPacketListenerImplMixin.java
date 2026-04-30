@@ -51,8 +51,8 @@ public abstract class ServerLoginPacketListenerImplMixin {
             return;
         }
 
-        var gameProfile = new GameProfile(connectionBridge.getSpoofedId().get(), value.getName());
-        var properties = gameProfile.getProperties();
+        var gameProfile = new GameProfile(connectionBridge.getSpoofedId().get(), value.name());
+        var properties = gameProfile.properties();
 
         Arrays.stream(connectionBridge.getSpoofedProperties().get()).filter(property -> PROP_PATTERN.matcher(property.name()).matches()).forEach(property -> {
             properties.put(property.name(), property);

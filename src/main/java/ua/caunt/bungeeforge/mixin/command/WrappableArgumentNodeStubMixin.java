@@ -4,7 +4,7 @@ import io.netty.buffer.Unpooled;
 import net.minecraft.commands.synchronization.ArgumentTypeInfo;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import org.spongepowered.asm.mixin.*;
 import ua.caunt.bungeeforge.BungeeForge;
 
@@ -23,7 +23,7 @@ public abstract class WrappableArgumentNodeStubMixin {
 
     @Shadow
     @Final
-    private ResourceLocation suggestionId;
+    private Identifier suggestionId;
 
     /**
      * @author Daniel Voort.
@@ -56,6 +56,6 @@ public abstract class WrappableArgumentNodeStubMixin {
         }
 
         if (suggestionId != null)
-            buffer.writeResourceLocation(suggestionId);
+            buffer.writeIdentifier(suggestionId);
     }
 }
