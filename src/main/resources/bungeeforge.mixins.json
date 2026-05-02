@@ -1,7 +1,8 @@
 {
   "required": true,
+  "minVersion": "0.8",
   "package": "ua.caunt.bungeeforge.mixin",
-  "compatibilityLevel": "JAVA_21",
+  "compatibilityLevel": "JAVA_25",
   "mixins": [
     "command.WrappableArgumentNodeStubMixin",
     "network.ConnectionMixin",
@@ -14,5 +15,7 @@
   "injectors": {
     "defaultRequire": 1
   },
-  "minVersion": "0.8"
+  "overwrites": {
+    "requireAnnotations": true
+  }
 }

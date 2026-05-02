@@ -1,5 +1,5 @@
 {
-  "version": "1.14-1.21.1",
+  "version": "1.14-26.1.2",
   "entries": [
     "brigadier:bool",
     "brigadier:float",
